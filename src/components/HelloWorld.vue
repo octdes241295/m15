@@ -1,6 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="hello" v-bind:class="ishid ? 'hidden' : ''">
+    <h1>User name : {{ name }}</h1>
     <h1>{{ msg }}</h1>
+    
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -31,28 +33,38 @@
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    name: String,
+    ishid: Boolean,
+  },
   }
-}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  margin: 40px 0 0;
+  margin: 0px 0px 0px 0px;
 }
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0px;
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0px 0px;
 }
 a {
   color: #42b983;
 }
+
+.hidden {
+  display: none;
+}
+
+
 </style>
